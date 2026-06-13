@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products - ShopEase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body id="top">
+    <section class="top_strip">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span><i class="fas fa-truck me-2"></i>Free delivery above Rs. 499</span>
+        <span><i class="fas fa-undo me-2"></i>Easy returns within 7 days</span>
+      </div>
+    </section>
+
+    <section class="header_menu" id="header_menu">
+      <div class="container-fluid px-0 shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">ShopEase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="product-list.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#shop_by_category">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#feature">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <form class="site-search d-flex" role="search">
+                <input id="navSearch" class="form-control me-2" type="search" placeholder="Search products" aria-label="Search products">
+                <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i><span>Search</span></button>
+              </form>
+              <div class="cart ms-lg-3 mt-3 mt-lg-0">
+                <a href="cart.html" aria-label="Cart">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="badge badge-pill badge-primary">5</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <main class="products site-section" id="products">
+      <div class="container">
+        <div class="section_title text-center mb-5">
+          <span class="eyebrow">Product tools</span>
+          <h1>Shop Products</h1>
+          <p>Filter, sort, and scan the catalog with a cleaner shopping workspace.</p>
+        </div>
+
+        <div class="row g-4">
+          <aside class="col-lg-3">
+            <div class="filter-panel">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h2 class="h5 mb-0"><i class="fas fa-sliders-h me-2"></i>Filters</h2>
+                <button id="clearFilters" class="btn btn-sm btn-outline-primary" type="button"><i class="fas fa-redo"></i><span>Reset</span></button>
+              </div>
+
+              <div class="mb-4">
+                <h3 class="h6 fw-bold">Category</h3>
+                <div class="d-grid gap-2" id="categoryFilters">
+                  <button class="filter-option active" type="button" data-category="all">All <span>10</span></button>
+                  <button class="filter-option" type="button" data-category="women">Women <span>6</span></button>
+                  <button class="filter-option" type="button" data-category="men">Men <span>2</span></button>
+                  <button class="filter-option" type="button" data-category="kids">Kids <span>1</span></button>
+                  <button class="filter-option" type="button" data-category="accessories">Accessories <span>1</span></button>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="h6 fw-bold mb-0">Max Price</h3>
+                  <strong id="priceValue">Rs. 3,500</strong>
+                </div>
+                <input id="maxPrice" type="range" class="form-range mt-3" min="400" max="3500" step="100" value="3500">
+                <div class="d-flex justify-content-between small text-muted">
+                  <span>Rs. 400</span>
+                  <span>Rs. 3,500</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="h6 fw-bold">Rating</h3>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <small class="text-muted">Most picks are rated 4+ by shoppers.</small>
+              </div>
+            </div>
+          </aside>
+
+          <section class="col-lg-9">
+            <div class="tool-strip">
+              <div>
+                <strong id="resultCount">10 products</strong>
+                <div class="small text-muted">Updated instantly</div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <input id="productSearch" class="form-control" type="search" placeholder="Search catalog" aria-label="Search catalog">
+                <select id="sortProducts" class="form-select" aria-label="Sort products">
+                  <option value="default">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Top Rated</option>
+                  <option value="az">A - Z</option>
+                </select>
+                <div class="btn-group view-toggle" role="group" aria-label="View mode">
+                  <button id="gridView" class="btn btn-outline-primary active" type="button"><i class="fas fa-th-large"></i><span>Grid</span></button>
+                  <button id="listView" class="btn btn-outline-primary" type="button"><i class="fas fa-list"></i><span>List</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div id="productGrid" class="row g-4">
+              <div class="col-md-4 col-6 product-item" data-name="Green Dress" data-category="women" data-price="400" data-rating="4.1">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/-1117Wx1400H-701316868-green-MODEL.avif" class="card-img-top" alt="Green Dress">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 4 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Green Dress</a></h3>
+                    <p class="small text-muted mb-2">Soft drape, weekday-ready fit.</p>
+                    <p class="product-price fw-bold">Rs. 400</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Blue Shirt" data-category="men" data-price="799" data-rating="4.3">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/-473Wx593H-443322667-ltblue-MODEL.avif" class="card-img-top" alt="Blue Shirt">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 4 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Blue Shirt</a></h3>
+                    <p class="small text-muted mb-2">Slim cut with a clean collar.</p>
+                    <p class="product-price fw-bold">Rs. 799</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Classic Watch" data-category="accessories" data-price="1250" data-rating="4.8">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/Watche.webp" class="card-img-top" alt="Classic Watch">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 5 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Classic Watch</a></h3>
+                    <p class="small text-muted mb-2">Polished dial for daily wear.</p>
+                    <p class="product-price fw-bold">Rs. 1,250</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Blue Denim T-Shirt" data-category="men" data-price="999" data-rating="4.4">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/-473Wx593H-701350766-blue-MODEL.avif" class="card-img-top" alt="Blue Denim T-Shirt">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 4 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Blue Denim T-Shirt</a></h3>
+                    <p class="small text-muted mb-2">Washed texture with relaxed shape.</p>
+                    <p class="product-price fw-bold">Rs. 999</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Green Kurta Set" data-category="women" data-price="1899" data-rating="4.6">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/-473Wx593H-467159461-green-MODEL.avif" class="card-img-top" alt="Green Kurta Set">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 5 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Green Kurta Set</a></h3>
+                    <p class="small text-muted mb-2">Elegant set for casual occasions.</p>
+                    <p class="product-price fw-bold">Rs. 1,899</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Floral Summer Dress" data-category="women" data-price="1399" data-rating="4.5">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/two-beautiful-women-shopping-town_1303-16426.avif" class="card-img-top" alt="Floral Summer Dress">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 5 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Floral Summer Dress</a></h3>
+                    <p class="small text-muted mb-2">Lightweight dress for warm casual days.</p>
+                    <p class="product-price fw-bold">Rs. 1,399</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Cream Trench Coat" data-category="women" data-price="2499" data-rating="4.7">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/ideas-looks-para-ir-de-compras.webp" class="card-img-top" alt="Cream Trench Coat">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 5 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Cream Trench Coat</a></h3>
+                    <p class="small text-muted mb-2">Polished layer for shopping and outings.</p>
+                    <p class="product-price fw-bold">Rs. 2,499</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Pastel Casual Set" data-category="women" data-price="1699" data-rating="4.4">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/9a1d6f00-4ee4-49ee-8b3f-fea6bd048f75.webp" class="card-img-top" alt="Pastel Casual Set">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 4 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Pastel Casual Set</a></h3>
+                    <p class="small text-muted mb-2">Soft color outfit for everyday comfort.</p>
+                    <p class="product-price fw-bold">Rs. 1,699</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Festive Kurti" data-category="women" data-price="1199" data-rating="4.2">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/OIF.jpeg" class="card-img-top" alt="Festive Kurti">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 4 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Festive Kurti</a></h3>
+                    <p class="small text-muted mb-2">Easy festive style with a comfortable fit.</p>
+                    <p class="product-price fw-bold">Rs. 1,199</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4 col-6 product-item" data-name="Kids Party Outfit" data-category="kids" data-price="1499" data-rating="4.2">
+                <article class="card product-card shadow-sm text-center">
+                  <a href="product-detail.html">
+                    <img src="./images/09d83bfc66322b21ce7c2e9d0fdaf5de.jpg" class="card-img-top" alt="Kids Party Outfit">
+                  </a>
+                  <div class="card-body">
+                    <div class="mb-2 text-warning" aria-label="Rated 4 out of 5">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <h3 class="card-title"><a href="product-detail.html">Kids Party Outfit</a></h3>
+                    <p class="small text-muted mb-2">Bright, comfortable, and photo-ready.</p>
+                    <p class="product-price fw-bold">Rs. 1,499</p>
+                    <a href="cart.html" class="btn btn-primary btn-sm"><i class="fas fa-cart-plus me-2"></i>Add to Cart</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div id="emptyState" class="empty-state mt-4">
+              <i class="fas fa-search fa-2x mb-3"></i>
+              <h2 class="h5">No products found</h2>
+              <p class="mb-0">Try a different category, search term, or price limit.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <section class="footer_section pt-5 pb-2 bg-white" id="footer_section">
+      <footer>
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2">
+                <a href="index.html" class="footer-brand">ShopEase</a>
+              </div>
+              <div class="small">
+                The store for style, comfort, and quality shopping.
+              </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>Quick Links</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="product-list.html">Offers & Discounts</a></li>
+                  <li><a href="search.html">Search</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>New Products</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="product-list.html?category=women">Women's Clothing</a></li>
+                  <li><a href="product-list.html?category=accessories">Fashion Accessories</a></li>
+                  <li><a href="product-list.html?category=men">Men's Collection</a></li>
+                  <li><a href="product-list.html?category=kids">Kids & Toys</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>Support</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="contact.html">FAQ</a></li>
+                  <li><a href="checkout.html">Terms & Conditions</a></li>
+                  <li><a href="checkout.html">Privacy Policy</a></li>
+                  <li><a href="contact.html">Report a Payment Issue</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col text-center">
+              <h6 class="mb-3">Follow Us</h6>
+              <a href="#" class="me-3 text-danger" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#" class="me-3 text-danger" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="me-3 text-danger" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-danger" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top pt-3 mt-4">
+          <h6 class="text-center small mb-0">Copyright (c) 2026 ShopEase. All rights reserved.</h6>
+        </div>
+      </footer>
+    </section>
+
+    <div class="backtop">
+      <a id="button" href="#top" class="btn" role="button" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      if (!window.bootstrap) {
+        document.querySelectorAll('[data-bs-toggle="collapse"]').forEach((toggle) => {
+          toggle.addEventListener('click', () => {
+            const target = document.querySelector(toggle.getAttribute('data-bs-target'));
+            if (target) target.classList.toggle('show');
+          });
+        });
+      }
+
+      const productGrid = document.getElementById('productGrid');
+      const productItems = Array.from(document.querySelectorAll('.product-item'));
+      const categoryButtons = Array.from(document.querySelectorAll('[data-category]'));
+      const maxPrice = document.getElementById('maxPrice');
+      const priceValue = document.getElementById('priceValue');
+      const sortProducts = document.getElementById('sortProducts');
+      const productSearch = document.getElementById('productSearch');
+      const navSearch = document.getElementById('navSearch');
+      const resultCount = document.getElementById('resultCount');
+      const emptyState = document.getElementById('emptyState');
+      const clearFilters = document.getElementById('clearFilters');
+      const gridView = document.getElementById('gridView');
+      const listView = document.getElementById('listView');
+      const btn = document.getElementById('button');
+      let activeCategory = new URLSearchParams(window.location.search).get('category') || 'all';
+
+      const formatPrice = (value) => `Rs. ${Number(value).toLocaleString('en-IN')}`;
+
+      const setActiveCategory = (category) => {
+        activeCategory = category;
+        categoryButtons.forEach((button) => {
+          button.classList.toggle('active', button.dataset.category === activeCategory);
+        });
+      };
+
+      const sortVisibleProducts = (items) => {
+        return items.sort((a, b) => {
+          const sortValue = sortProducts.value;
+          const priceA = Number(a.dataset.price);
+          const priceB = Number(b.dataset.price);
+          const ratingA = Number(a.dataset.rating);
+          const ratingB = Number(b.dataset.rating);
+          const nameA = a.dataset.name;
+          const nameB = b.dataset.name;
+
+          if (sortValue === 'price-low') return priceA - priceB;
+          if (sortValue === 'price-high') return priceB - priceA;
+          if (sortValue === 'rating') return ratingB - ratingA;
+          if (sortValue === 'az') return nameA.localeCompare(nameB);
+          return productItems.indexOf(a) - productItems.indexOf(b);
+        });
+      };
+
+      const applyFilters = () => {
+        const query = productSearch.value.trim().toLowerCase();
+        const priceLimit = Number(maxPrice.value);
+        const visibleItems = productItems.filter((item) => {
+          const matchesCategory = activeCategory === 'all' || item.dataset.category === activeCategory;
+          const matchesPrice = Number(item.dataset.price) <= priceLimit;
+          const matchesSearch = item.dataset.name.toLowerCase().includes(query);
+          return matchesCategory && matchesPrice && matchesSearch;
+        });
+
+        productItems.forEach((item) => {
+          item.hidden = !visibleItems.includes(item);
+        });
+
+        sortVisibleProducts(visibleItems).forEach((item) => productGrid.appendChild(item));
+        resultCount.textContent = `${visibleItems.length} product${visibleItems.length === 1 ? '' : 's'}`;
+        emptyState.style.display = visibleItems.length ? 'none' : 'block';
+        priceValue.textContent = formatPrice(maxPrice.value);
+      };
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          setActiveCategory(button.dataset.category);
+          applyFilters();
+        });
+      });
+
+      maxPrice.addEventListener('input', applyFilters);
+      sortProducts.addEventListener('change', applyFilters);
+      productSearch.addEventListener('input', applyFilters);
+
+      document.querySelector('.site-search').addEventListener('submit', (event) => {
+        event.preventDefault();
+        productSearch.value = navSearch.value;
+        applyFilters();
+        productSearch.focus();
+      });
+
+      clearFilters.addEventListener('click', () => {
+        setActiveCategory('all');
+        maxPrice.value = maxPrice.max;
+        productSearch.value = '';
+        navSearch.value = '';
+        sortProducts.value = 'default';
+        applyFilters();
+      });
+
+      gridView.addEventListener('click', () => {
+        productGrid.classList.remove('products-list-view');
+        gridView.classList.add('active');
+        listView.classList.remove('active');
+      });
+
+      listView.addEventListener('click', () => {
+        productGrid.classList.add('products-list-view');
+        listView.classList.add('active');
+        gridView.classList.remove('active');
+      });
+
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 300);
+      });
+
+      setActiveCategory(activeCategory);
+      applyFilters();
+    </script>
+  </body>
+</html>

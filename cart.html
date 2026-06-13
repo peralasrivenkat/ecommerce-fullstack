@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart - ShopEase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body id="top">
+    <section class="top_strip">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span><i class="fas fa-lock me-2"></i>Cart reserved for 30 minutes</span>
+        <span><i class="fas fa-truck me-2"></i>Free delivery above Rs. 499</span>
+      </div>
+    </section>
+
+    <section class="header_menu" id="header_menu">
+      <div class="container-fluid px-0 shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">ShopEase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="product-list.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <form class="site-search d-flex" role="search" action="search.html">
+                <input class="form-control me-2" type="search" name="q" placeholder="Search products" aria-label="Search products">
+                <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i><span>Search</span></button>
+              </form>
+              <div class="cart ms-lg-3 mt-3 mt-lg-0">
+                <a href="cart.html" aria-label="Cart">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="badge badge-pill badge-primary">2</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-hero hero-cart">
+      <div class="container">
+        <span class="eyebrow">Shopping cart</span>
+        <h1>Review Your Bag</h1>
+        <p>Adjust quantities, apply a coupon, and move to checkout with a clear order summary.</p>
+      </div>
+    </section>
+
+    <main class="site-section bg-soft">
+      <div class="container">
+        <div class="row g-4">
+          <section class="col-lg-8">
+            <div class="content-card mb-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="eyebrow">2 items</span>
+                  <h2 class="mb-0">Your Cart</h2>
+                </div>
+                <a href="product-list.html" class="btn btn-outline-primary btn-sm">Continue Shopping</a>
+              </div>
+            </div>
+
+            <div class="table-like">
+              <article class="cart-line">
+                <img src="./images/-473Wx593H-701350766-blue-MODEL.avif" alt="Blue Denim T-Shirt">
+                <div>
+                  <h3 class="h5 mb-1">Blue Denim T-Shirt</h3>
+                  <p class="small text-muted mb-2">Color: Blue | Size: M</p>
+                  <div class="quantity-control">
+                    <button class="btn btn-outline-primary btn-sm" type="button" data-qty="#qty-one" data-step="-1">-</button>
+                    <input id="qty-one" class="form-control quantity" type="number" min="1" max="10" value="1" aria-label="Blue Denim T-Shirt quantity">
+                    <button class="btn btn-outline-primary btn-sm" type="button" data-qty="#qty-one" data-step="1">+</button>
+                  </div>
+                </div>
+                <div class="text-start">
+                  <p class="product-price fw-bold mb-2">Rs. 999</p>
+                  <a href="#" class="small">Remove</a>
+                </div>
+              </article>
+
+              <article class="cart-line">
+                <img src="./images/-473Wx593H-467159461-green-MODEL.avif" alt="Green Kurta Set">
+                <div>
+                  <h3 class="h5 mb-1">Green Kurta Set</h3>
+                  <p class="small text-muted mb-2">Color: Green | Size: M</p>
+                  <div class="quantity-control">
+                    <button class="btn btn-outline-primary btn-sm" type="button" data-qty="#qty-two" data-step="-1">-</button>
+                    <input id="qty-two" class="form-control quantity" type="number" min="1" max="10" value="1" aria-label="Green Kurta Set quantity">
+                    <button class="btn btn-outline-primary btn-sm" type="button" data-qty="#qty-two" data-step="1">+</button>
+                  </div>
+                </div>
+                <div class="text-start">
+                  <p class="product-price fw-bold mb-2">Rs. 1,899</p>
+                  <a href="#" class="small">Remove</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <aside class="col-lg-4">
+            <div class="summary-card">
+              <h2 class="h5 mb-4">Order Summary</h2>
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong>Rs. 2,898</strong>
+              </div>
+              <div class="summary-row">
+                <span>Shipping</span>
+                <strong>Free</strong>
+              </div>
+              <div class="summary-row">
+                <span>Estimated tax</span>
+                <strong>Rs. 145</strong>
+              </div>
+              <div class="summary-row">
+                <span><strong>Total</strong></span>
+                <strong>Rs. 3,043</strong>
+              </div>
+
+              <div class="mt-4">
+                <label for="coupon" class="h6 fw-bold">Coupon Code</label>
+                <div class="d-flex gap-2">
+                  <input id="coupon" class="form-control" type="text" placeholder="SAVE10">
+                  <button class="btn btn-outline-primary" type="button">Apply</button>
+                </div>
+              </div>
+
+              <a href="checkout.html" class="btn btn-primary w-100 mt-4"><i class="fas fa-credit-card me-2"></i>Go to Checkout</a>
+              <p class="small text-muted text-center mt-3 mb-0">Secure payment with cards, UPI, wallets, and cash on delivery.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <section class="footer_section pt-5 pb-2 bg-white" id="footer_section">
+      <footer>
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><a href="index.html" class="footer-brand">ShopEase</a></div>
+              <div class="small">The store for style, comfort, and quality shopping.</div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>Quick Links</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="product-list.html">Offers & Discounts</a></li>
+                  <li><a href="search.html">Search</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>New Products</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="product-list.html?category=women">Women's Clothing</a></li>
+                  <li><a href="product-list.html?category=accessories">Fashion Accessories</a></li>
+                  <li><a href="product-list.html?category=men">Men's Collection</a></li>
+                  <li><a href="product-list.html?category=kids">Kids & Toys</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>Support</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="contact.html">FAQ</a></li>
+                  <li><a href="checkout.html">Terms & Conditions</a></li>
+                  <li><a href="checkout.html">Privacy Policy</a></li>
+                  <li><a href="contact.html">Report a Payment Issue</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-top pt-3 mt-4">
+          <h6 class="text-center small mb-0">Copyright (c) 2026 ShopEase. All rights reserved.</h6>
+        </div>
+      </footer>
+    </section>
+
+    <div class="backtop">
+      <a id="button" href="#top" class="btn" role="button" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>

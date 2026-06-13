@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search - ShopEase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body id="top">
+    <section class="top_strip">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span><i class="fas fa-search me-2"></i>Search by product, style, or category</span>
+        <span><i class="fas fa-sliders-h me-2"></i>Use the catalog filters for deeper browsing</span>
+      </div>
+    </section>
+
+    <section class="header_menu" id="header_menu">
+      <div class="container-fluid px-0 shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">ShopEase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="product-list.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <form class="site-search d-flex" role="search" action="search.html">
+                <input class="form-control me-2" type="search" name="q" placeholder="Search products" aria-label="Search products">
+                <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i><span>Search</span></button>
+              </form>
+              <div class="cart ms-lg-3 mt-3 mt-lg-0">
+                <a href="cart.html" aria-label="Cart">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="badge badge-pill badge-primary">2</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-hero hero-search">
+      <div class="container">
+        <span class="eyebrow">Search</span>
+        <h1>Find Products Faster</h1>
+        <p>Search the catalog by name, category, or detail and jump straight to product pages.</p>
+      </div>
+    </section>
+
+    <main class="site-section">
+      <div class="container">
+        <div class="row g-4">
+          <aside class="col-lg-4">
+            <div class="filter-panel">
+              <h2 class="h5 mb-3"><i class="fas fa-search me-2"></i>Search Tools</h2>
+              <label for="searchInput" class="h6 fw-bold">Keyword</label>
+              <input id="searchInput" class="form-control mb-3" type="search" placeholder="Try shirt, dress, watch">
+              <label for="categorySelect" class="h6 fw-bold">Category</label>
+              <select id="categorySelect" class="form-select mb-4">
+                <option value="all">All Categories</option>
+                <option value="women">Women</option>
+                <option value="men">Men</option>
+                <option value="kids">Kids</option>
+                <option value="accessories">Accessories</option>
+              </select>
+              <a href="product-list.html" class="btn btn-outline-primary w-100">Open Full Catalog</a>
+            </div>
+          </aside>
+
+          <section class="col-lg-8">
+            <div class="content-card">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                  <span class="eyebrow">Results</span>
+                  <h2 class="mb-0" id="searchCount">10 products</h2>
+                </div>
+                <a href="category.html" class="small">Browse categories</a>
+              </div>
+
+              <div id="searchResults">
+                <article class="search-result" data-name="green dress" data-category="women">
+                  <img src="./images/-1117Wx1400H-701316868-green-MODEL.avif" alt="Green Dress">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Green Dress</a></h3>
+                    <p class="small text-muted mb-1">Women | Soft drape, weekday-ready fit.</p>
+                    <div class="rating" aria-label="Rated 4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 400</strong>
+                </article>
+
+                <article class="search-result" data-name="blue shirt denim slim" data-category="men">
+                  <img src="./images/-473Wx593H-443322667-ltblue-MODEL.avif" alt="Blue Shirt">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Blue Shirt</a></h3>
+                    <p class="small text-muted mb-1">Men | Slim cut with a clean collar.</p>
+                    <div class="rating" aria-label="Rated 4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 799</strong>
+                </article>
+
+                <article class="search-result" data-name="classic watch accessory" data-category="accessories">
+                  <img src="./images/Watche.webp" alt="Classic Watch">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Classic Watch</a></h3>
+                    <p class="small text-muted mb-1">Accessories | Polished dial for daily wear.</p>
+                    <div class="rating" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 1,250</strong>
+                </article>
+
+                <article class="search-result" data-name="green kurta set women" data-category="women">
+                  <img src="./images/-473Wx593H-467159461-green-MODEL.avif" alt="Green Kurta Set">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Green Kurta Set</a></h3>
+                    <p class="small text-muted mb-1">Women | Elegant set for casual occasions.</p>
+                    <div class="rating" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 1,899</strong>
+                </article>
+
+                <article class="search-result" data-name="floral summer dress women" data-category="women">
+                  <img src="./images/two-beautiful-women-shopping-town_1303-16426.avif" alt="Floral Summer Dress">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Floral Summer Dress</a></h3>
+                    <p class="small text-muted mb-1">Women | Lightweight dress for warm casual days.</p>
+                    <div class="rating" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 1,399</strong>
+                </article>
+
+                <article class="search-result" data-name="cream trench coat women" data-category="women">
+                  <img src="./images/ideas-looks-para-ir-de-compras.webp" alt="Cream Trench Coat">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Cream Trench Coat</a></h3>
+                    <p class="small text-muted mb-1">Women | Polished layer for shopping and outings.</p>
+                    <div class="rating" aria-label="Rated 5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 2,499</strong>
+                </article>
+
+                <article class="search-result" data-name="pastel casual set women" data-category="women">
+                  <img src="./images/9a1d6f00-4ee4-49ee-8b3f-fea6bd048f75.webp" alt="Pastel Casual Set">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Pastel Casual Set</a></h3>
+                    <p class="small text-muted mb-1">Women | Soft color outfit for everyday comfort.</p>
+                    <div class="rating" aria-label="Rated 4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 1,699</strong>
+                </article>
+
+                <article class="search-result" data-name="festive kurti women" data-category="women">
+                  <img src="./images/OIF.jpeg" alt="Festive Kurti">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Festive Kurti</a></h3>
+                    <p class="small text-muted mb-1">Women | Easy festive style with a comfortable fit.</p>
+                    <div class="rating" aria-label="Rated 4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 1,199</strong>
+                </article>
+
+                <article class="search-result" data-name="blue denim t-shirt men" data-category="men">
+                  <img src="./images/-473Wx593H-701350766-blue-MODEL.avif" alt="Blue Denim T-Shirt">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Blue Denim T-Shirt</a></h3>
+                    <p class="small text-muted mb-1">Men | Washed texture with relaxed shape.</p>
+                    <div class="rating" aria-label="Rated 4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 999</strong>
+                </article>
+
+                <article class="search-result" data-name="kids party outfit" data-category="kids">
+                  <img src="./images/09d83bfc66322b21ce7c2e9d0fdaf5de.jpg" alt="Kids Party Outfit">
+                  <div>
+                    <h3 class="h5 mb-1"><a href="product-detail.html">Kids Party Outfit</a></h3>
+                    <p class="small text-muted mb-1">Kids | Bright, comfortable, and photo-ready.</p>
+                    <div class="rating" aria-label="Rated 4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                  </div>
+                  <strong class="product-price">Rs. 1,499</strong>
+                </article>
+              </div>
+
+              <div id="emptySearch" class="empty-state mt-4">
+                <i class="fas fa-search fa-2x mb-3"></i>
+                <h3 class="h5">No matching products</h3>
+                <p class="mb-0">Try a shorter search term or browse the full catalog.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <section class="footer_section pt-5 pb-2 bg-white" id="footer_section">
+      <footer>
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><a href="index.html" class="footer-brand">ShopEase</a></div>
+              <div class="small">The store for style, comfort, and quality shopping.</div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>Quick Links</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="product-list.html">Offers & Discounts</a></li>
+                  <li><a href="search.html">Search</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>New Products</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="product-list.html?category=women">Women's Clothing</a></li>
+                  <li><a href="product-list.html?category=accessories">Fashion Accessories</a></li>
+                  <li><a href="product-list.html?category=men">Men's Collection</a></li>
+                  <li><a href="product-list.html?category=kids">Kids & Toys</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="footer_title mb-2"><h6>Support</h6></div>
+              <div class="footer_links small">
+                <ul class="list-unstyled">
+                  <li><a href="contact.html">FAQ</a></li>
+                  <li><a href="checkout.html">Terms & Conditions</a></li>
+                  <li><a href="checkout.html">Privacy Policy</a></li>
+                  <li><a href="contact.html">Report a Payment Issue</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-top pt-3 mt-4">
+          <h6 class="text-center small mb-0">Copyright (c) 2026 ShopEase. All rights reserved.</h6>
+        </div>
+      </footer>
+    </section>
+
+    <div class="backtop">
+      <a id="button" href="#top" class="btn" role="button" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/site.js"></script>
+    <script>
+      const searchInput = document.getElementById('searchInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const searchItems = Array.from(document.querySelectorAll('.search-result'));
+      const searchCount = document.getElementById('searchCount');
+      const emptySearch = document.getElementById('emptySearch');
+      const query = new URLSearchParams(window.location.search).get('q') || '';
+
+      function applySearch() {
+        const term = searchInput.value.trim().toLowerCase();
+        const category = categorySelect.value;
+        let visibleCount = 0;
+        searchItems.forEach((item) => {
+          const matchesTerm = item.dataset.name.includes(term);
+          const matchesCategory = category === 'all' || item.dataset.category === category;
+          const isVisible = matchesTerm && matchesCategory;
+          item.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
+        });
+        searchCount.textContent = `${visibleCount} product${visibleCount === 1 ? '' : 's'}`;
+        emptySearch.style.display = visibleCount ? 'none' : 'block';
+      }
+
+      searchInput.value = query;
+      searchInput.addEventListener('input', applySearch);
+      categorySelect.addEventListener('change', applySearch);
+      applySearch();
+    </script>
+  </body>
+</html>
