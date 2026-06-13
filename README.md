@@ -74,6 +74,22 @@ JWT_SECRET=your_jwt_secret_key
 CLIENT_URL=http://localhost:3000
 ```
 
+## Run Backend
+
+```bash
+cd backend
+npm install
+copy .env.example .env
+npm start
+```
+
+## Seed Women Products
+
+```bash
+cd backend
+npm run seed:women
+```
+
 ## Resume Line
 
 ```text
